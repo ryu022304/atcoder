@@ -1,2 +1,1 @@
-s = gets.chomp.split('').map(&:to_i)
-puts s.count(1)
+puts gets.chomp.split('').count('1')
