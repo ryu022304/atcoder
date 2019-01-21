@@ -15,7 +15,7 @@ costs.each_with_index do |cost,index|
   p_cost_list = []
   pre_cost_list.each do |p_cost|
     if route[index-p_cost[1]].nil?
-      next
+      break
     end
     p_cost_list << ((p_cost[0] < 100000) ? (costs[index-p_cost[1]]-now).abs + route[index-p_cost[1]] : 100000)
   end
