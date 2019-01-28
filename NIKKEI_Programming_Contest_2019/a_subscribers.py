@@ -17,3 +17,11 @@ elif n < a + b:
     max_num = min(a,b)
 
 print(max_num, min_num)
+'''
+n,a,b = map(int, input().split())
+
+max_num = min(a,b)
+min_num = max(a+b-n,0)
+
+print(max_num, min_num)
+'''
