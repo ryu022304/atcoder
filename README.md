@@ -4,6 +4,8 @@
 * Educational DP Contest
 * AISing Programming Contest 2019
 * AtCoder Beginner Contest
+* NIKKEI Programming Contest 2019
+* みんなのプロコン2019
 
 ### 使用言語  
 * Ruby
