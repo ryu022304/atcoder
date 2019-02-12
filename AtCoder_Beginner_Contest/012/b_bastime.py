@@ -1,0 +1,5 @@
+n = int(input())
+hh = str(int(int(n)/3600)).zfill(2)
+mm = str(int(n/60)%60).zfill(2)
+ss = str(n%60).zfill(2)
+print('{}:{}:{}'.format(hh,mm,ss))
