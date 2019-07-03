@@ -1,22 +1,14 @@
 n,a,b,c = map(int,input().split())
 l = [int(input()) for _ in range(n)]
-abc = [a,b,c]
-count = 0
-if a in l:
-    l.remove(a)
-    abc.remove(a)
-if b in l:
-    l.remove(b)
-    abc.remove(b)
-if c in l:
-    l.remove(c)
-    abc.remove(c)
+INF = 10**9
 
-for alp in abc:
-    count_list = [abs(alp-take) for take in l if abs(alp-take) <= 10]
-    print(count_list)
+def dfs(cur, a_tmp, b_tmp, c_tmp):
+    if cur == n:
+        return abs(a_tmp-a)+abs(b_tmp-b)+abs(c_tmp-c)-30 if min(a_tmp,b_tmp,c_tmp) > 0 else INF
+    ret0 = dfs(cur+1, a_tmp, b_tmp, c_tmp)
+    ret1 = dfs(cur+1, a_tmp+l[cur], b_tmp, c_tmp)+10
+    ret2 = dfs(cur+1, a_tmp, b_tmp+l[cur], c_tmp)+10
+    ret3 = dfs(cur+1, a_tmp, b_tmp, c_tmp+l[cur])+10
+    return min(ret0, ret1, ret2, ret3)
 
-    count += min(count_list)
-print(count)
-print(l)
-print(abc)
+print(dfs(0,0,0,0))
