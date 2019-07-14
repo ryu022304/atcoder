@@ -1,12 +1,9 @@
-N,M = map(int, input().split())
-X = [int(i) for i in input().split()]
-
-X.sort()
-print(X)
-
-count = 0
-if N > M:
+n,m = map(int, input().split())
+x_list = list(map(int, input().split()))
+x_list.sort()
+if n >= m:
     print(0)
 else:
-    for x in X:
-        
+    l_list = [x_list[i]-x_list[i-1] for i in range(1,m)]
+    l_list.sort()
+    print(sum(l_list[:m-n]))
